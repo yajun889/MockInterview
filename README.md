@@ -3,7 +3,7 @@ How to use
 
 The easy way is to clone it and use it via a virtualenv:
 
-    $ git clone https://github.com/yajun889/MockInterview.git or git@github.com:yajun889/MockInterview.git
+    $ git clone https://github.com/yajun889/MockInterview.git or git clone git@github.com:yajun889/MockInterview.git
     $ cd MockInterview
 
     $ virtualenv env
@@ -12,6 +12,6 @@ The easy way is to clone it and use it via a virtualenv:
 
 Run the server:
 
-    $ python webdev.py
+    $ python app.py
 
 Then visit with your web browser the URL: `http://127.0.0.1:5000`.
