@@ -1,5 +1,8 @@
+import os
+
 from flask import Flask, render_template, request
 from runcode import runcode
+
 app = Flask(__name__)
 
 default_c_code = """#include <stdio.h>
@@ -32,6 +35,7 @@ if __name__ == "__main__":
 default_rows = "15"
 default_cols = "60"
 
+
 @app.route("/")
 @app.route("/runc", methods=['POST', 'GET'])
 def runc():
@@ -51,6 +55,7 @@ def runc():
                            resrun=resrun,
                            rescomp=rescompil,
                            rows=default_rows, cols=default_cols)
+
 
 @app.route("/cpp")
 @app.route("/runcpp", methods=['POST', 'GET'])
@@ -72,6 +77,7 @@ def runcpp():
                            rescomp=rescompil,
                            rows=default_rows, cols=default_cols)
 
+
 @app.route("/py")
 @app.route("/runpy", methods=['POST', 'GET'])
 def runpy():
@@ -85,13 +91,15 @@ def runpy():
         code = default_py_code
         resrun = 'No result!'
         rescompil = "No compilation for Python"
-        
+
     return render_template("main.html",
                            code=code,
                            target="runpy",
                            resrun=resrun,
-                           rescomp=rescompil,#"No compilation for Python",
+                           rescomp=rescompil,  # "No compilation for Python",
                            rows=default_rows, cols=default_cols)
 
+
 if __name__ == "__main__":
-    app.run()
+    port = int(os.environ.get('PORT', 5000))
+    app.run(host='0.0.0.0', port=port)
