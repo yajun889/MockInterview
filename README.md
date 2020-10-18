@@ -1,5 +1,5 @@
 Mock Interview Demo link:
-<a href="https://itu-demo.herokuapp.com" target="_blank">https://itu-demo.herokuapp.com</a>
+https://itu-demo.herokuapp.com
 
 How to use
 ----------
@@ -17,5 +17,4 @@ Run the server:
 
     $ python app.py
 
-Then visit with your web browser the URL: 
-<a href="http://127.0.0.1:5000" target="_blank">http://127.0.0.1:5000</a>
+Then visit with your web browser the URL: http://127.0.0.1:5000
